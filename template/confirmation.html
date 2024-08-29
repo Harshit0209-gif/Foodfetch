@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Navbar code -->
+
+    <!-- Container div for the confirmation message -->
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .confirm {
+                max-width: 100%;
+                min-height: 50vh !important;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+            }
+            .confirmation-message {
+                font-size: 18px;
+                font-weight: bold;
+                color: green;
+                margin-bottom: 20px;
+            }
+            .back-link {
+                display: inline-block;
+                padding: 8px 20px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        </style>
+
+        <div class="confirm">
+            <p class="confirmation-message">Your order has been confirmed. Thank you!</p>
+            <a href="{% url 'all_dishes' %}" class="back-link">Back to Menu</a>
+            <a href="{% url 'delivery_updates' %}" class="updates">Click here for delivery updates.</a>
+        </div>
+{% endblock %}

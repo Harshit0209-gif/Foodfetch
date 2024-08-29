@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+ 
+
+    {% block head %}   
+    {% endblock %}
+{% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+   
+        .delivery-status {
+            max-width: 100%;
+                min-height: 50vh !important;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+            
+        }
+        .status-update {
+            font-weight: bold;
+            color: blue;
+        }
+       
+    </style>
+</head>
+<body>
+       
+        <div class="delivery-status">
+            <h2>Delivery Updates</h2>
+            <p class="status-update" id="statusUpdate">Order Placed</p>
+        </div>
+
+    <script>
+        // Function to update delivery status
+        function updateStatus(status) {
+            document.getElementById('statusUpdate').innerText = status;
+        }
+
+
+        // Initial status update
+        setTimeout(function() {
+            updateStatus('Order Accepted by Restaurant');
+        }, 15000);  // 15 seconds delay
+
+        // Status update after 5 seconds of initial update
+        setTimeout(function() {
+            updateStatus('Order is Being Prepared');
+        }, 20000);  // 20 seconds delay
+         
+        setTimeout(function() {
+            updateStatus('Delivery partner is being assigned!');
+        }, 100000);  // 20 seconds delay
+
+
+
+        // Status update after 3-4 minutes
+        setTimeout(function() {
+            updateStatus('Out for Delivery');
+        }, 120000);  // 2 minutes delay
+
+        // Status update after 2 more minutes
+        setTimeout(function() {
+            updateStatus('Order Delivered');
+        }, 140000);  // 6 minutes delay
+
+       
+    </script>
+    </div>
+{% endblock %}

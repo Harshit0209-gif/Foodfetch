@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+<!-- Main css -->
+<link rel="stylesheet" href="/static/auth/css/style.css">
+<style>
+    .container{
+        background-color: transparent;
+        width: 90%;
+    }
+    .main .container{
+        background-color: white !important;
+        width: 60%;
+    }
+    .main{
+        padding: 0px;
+        margin: 0px;
+    }
+    .nav-link{
+        color:#666666 !important;
+    }   
+   #signin{
+       background:#719a0a;
+   }
+</style>
+<div class="main"></div>   
+<section class="sign-in" style="padding-top:100px;">>
+    <div class="container">                 
+<div class="signin-form">
+    <h2 class="form-title">Verify OTP</h2>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="post" class="register-form">
+        {% csrf_token %}
+        <div class="form-group">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp">
+        </div>
+        <div class="form-group form-button">
+        <button type="submit" id="signin" class="form-submit">Submit</button>
+        </div>
+    </form>
+</div>
+    </div>
+</section>
+</div>
+    {% endblock %}
